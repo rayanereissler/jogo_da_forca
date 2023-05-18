@@ -53,6 +53,7 @@ def desenho_da_forca(window, chance):
     if chance >=6: #desenho da perna esquerda
         pg.draw.line(window,preto, (300,350), (225,450),10)
 
+
 #criando uma função para desenhar o botão de restart:
 def desenho_restart_button(window):
     pg.draw.rect(window, preto, (700,100,200,65))
@@ -93,10 +94,9 @@ def palavra_do_jogo(window, palavra_camuflada):
 #criando uma função para ativar o restart do jogo:
 def restart_do_jogo(palavra_camuflada, end_game, chance, letra, tentativas_de_letras,click_last_status,click, x, y):
     count=0
-    limite=len(palavra_escolhida)
-
+    limite=len(palavra_camuflada)
     for n in range(len(palavra_camuflada)):
-        if palavra_camuflada[n] !=  '#':
+        if palavra_camuflada[n]!='#':
             count+=1
     if count == limite and click_last_status == False and click[0] == True:
         if x >= 700 and x <= 900 and y >= 100 and y <= 165:
